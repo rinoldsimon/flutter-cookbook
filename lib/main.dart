@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primaryColor: Colors.white,
+        primaryColor: Colors.blue,
       ),
       home: MyHomePage(title: appTitle),
     );
@@ -59,6 +59,9 @@ class MyHomePage extends StatelessWidget {
           children: [
             Text('Home Page!'),
             ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: Theme.of(context).primaryColor
+              ),
               child: Text('Page 1'),
               onPressed: () {
                 Navigator.push(
@@ -95,7 +98,7 @@ class MyHomePage extends StatelessWidget {
             DrawerHeader(
               child: Text('Drawer Header'),
               decoration: BoxDecoration(
-                color: Colors.blue,
+                color: Theme.of(context).primaryColor,
               ),
             ),
             ListTile(
@@ -195,4 +198,3 @@ class SettingsScreen extends StatelessWidget {
     );
   }
 }
-
